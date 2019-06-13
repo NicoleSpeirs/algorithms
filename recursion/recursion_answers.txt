@@ -20,9 +20,10 @@ Difference is that in all of the recursive solutions the base case is reached by
 
 5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
 
-var count = 0;
+
 
 function countItems(arr) {
+  var count = 0;
  if(!Array.isArray(arr)){
     count ++;
   } else {
