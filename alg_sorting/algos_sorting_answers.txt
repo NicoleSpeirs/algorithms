@@ -1,0 +1,51 @@
+1. Implement a solution for bubble sort.
+
+function bubbleSort(collection){
+  for(var i = collection.length; i > 0; i--){
+    console.log("outer count" + i)
+    swapped = false;
+    for(var j = 0; j < (i - 1); j++){
+      console.log("inner loop " + j + " going to index" + ( i - 1))
+      if(collection[j] > collection[j + 1]){
+        var tmp = collection[j];
+        collection[j] = collection[j + 1];
+        collection[j + 1] = tmp;
+        swapped = true;
+       }
+     }
+     if (!swapped)break;
+   }
+  return collection;
+}
+
+console.log(bubbleSort(["E", "C", "A", "B", "F", "G", "D"]));
+
+
+2. Write pseudocode for quicksort.
+
+FUNCTION quickSort(collection)
+    IF collection length <= 1 THEN
+        RETURN collection
+    ELSE
+        SET pivot to last item in the collection
+        SET left to empty array
+        Set right to empty array
+
+    FOR i[0] to i[-1]
+        IF collection[i] < pivot
+            PUSH collection[i] to left array
+        ELSE
+            PUSH collection[i] to right array
+        END IF
+    END FOR
+    CONCAT left array, right array, and pivot
+END FUNCTION
+
+3. We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
+
+Merge sort and Quick sort are more efficient than other sorting methods because instead of iterating through all the unsorted data one by one it breaks the collection into sub-collections and then sorts and merges the sub-collections which is much faster.
+Both merge sort and quick sort have a runtime of O(n log n). Merge sort works well with large data while quick sort requires minimal storage.
+
+4. All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+Bucket sort works by distributes the elements of an array into a number of buckets by applying insertion sort algorithm. Bucket sort best used when memory is not a concern and when data is evenly distributed.
